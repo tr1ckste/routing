@@ -6,9 +6,10 @@
         dense
         dark
         >
-        <v-btn class="ml-3" to="/tutorials">Tutorials</v-btn>
-        <v-btn class="ml-3" to="/subjects">Subjects</v-btn>
-        <v-btn class="ml-3" to="/about">About</v-btn>
+        <v-btn class="ml-3" to="/subjects/pe">Physical Education</v-btn>
+        <v-btn class="ml-3" to="/subjects/pe/math">Math</v-btn>
+        <v-spacer/>
+        <v-btn class="ml-3" to="/">Home</v-btn>
       </v-app-bar>
     </v-container>
   </v-app>
