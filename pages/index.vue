@@ -1,26 +1,56 @@
 <template>
   <v-app>
-    <v-container fluid>
-      <v-app-bar
-        color="orange"
-        dense
-        dark
+    <div class="flex">
+      <v-navigation-drawer permanent>
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title class="text-h6">
+              Routing
+            </v-list-item-title>
+            <v-list-item-subtitle>
+              subtext
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-divider></v-divider>
+
+        <v-list
+          dense
+          nav
+          v-for="item in items"
+          v-bind:key="item"
         >
-        <v-btn class="ml-3" to="/tutorials">Tutorials</v-btn>
-        <v-btn class="ml-3" to="/subjects">Subjects</v-btn>
-        <v-btn class="ml-3" to="/about">About</v-btn>
-      </v-app-bar>
-    </v-container>
+          <v-list-item link>
+            <v-list-item-content>
+              <NuxtLink :to="'/' + item">
+                User {{item}}
+              </NuxtLink>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-navigation-drawer>
+      <div>
+        <NuxtChild/>
+      </div>
+    </div>
   </v-app>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-
-export default Vue.extend({})
+<script>
+export default {
+  data() {
+    return {
+      items: [
+        1, 2, 3, 4, 5, 6
+      ]
+    }
+  }
+}
 </script>
 
 <style>
-
+.flex {
+  display: flex;
+}
 </style>
